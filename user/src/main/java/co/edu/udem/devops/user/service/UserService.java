@@ -5,6 +5,7 @@ import co.edu.udem.devops.user.repository.UserRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -31,6 +32,10 @@ public class UserService {
 
     public Optional<User> findUserByEmailAndPassword(String email, String password) {
         return userRepository.findUserByEmailAndPassword(email, password);
+    }
+
+    public List<User> findAllUsers() {
+        return userRepository.findAll();
     }
 
     public void updateUserPassword(User user, Long id) {

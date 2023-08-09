@@ -4,6 +4,7 @@ import co.edu.udem.devops.user.model.User;
 import co.edu.udem.devops.user.service.UserService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @CrossOrigin
@@ -34,6 +35,11 @@ public class UserController {
     @PostMapping(value = "/get/login")
     public Optional<User> findUserByEmailAndPassword(@RequestBody User user) {
         return this.userService.findUserByEmailAndPassword(user.getEmail(), user.getPassword());
+    }
+
+    @GetMapping("/get")
+    public List<User> getAllUsers() {
+        return this.userService.findAllUsers();
     }
 
     @PutMapping("/put/{id}")
