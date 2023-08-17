@@ -30,7 +30,7 @@ public class CampaignRepositoryTest {
         Campaign savedCampaign = campaignRepository.save(campaign);
 
         Assertions.assertNotNull(savedCampaign);
-        Assertions.assertTrue(savedCampaign.getCampaignId() = 0);
+        Assertions.assertTrue(savedCampaign.getCampaignId() < 0);
     }
 
     @Test
